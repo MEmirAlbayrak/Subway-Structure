@@ -5,11 +5,11 @@ public class Main {
 		
 		DLinkedList dlist = new DLinkedList();
 		
-		dlist.append("ÜSKÜDAR");
-		dlist.push("KADIKÖY");
-		dlist.push("ATAÞEHÝR");
-		dlist.push("BEÞÝKTAÞ ");
-		dlist.push("ARNAVUTKÖY");
+		dlist.append("USKUDAR");
+		dlist.push("KADIKIY");
+		dlist.push("ATASEHIR");
+		dlist.push("BESIKTAS ");
+		dlist.push("ARNAVUTKOY");
 		dlist.printlist(dlist.head);
 		
 		
