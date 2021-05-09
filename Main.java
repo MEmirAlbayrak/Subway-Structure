@@ -4,8 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		DLinkedList M1A = new DLinkedList();
-		DLinkedList M1B = new DLinkedList();
+		DLinkedList M1 = new DLinkedList();
 		DLinkedList M2 = new DLinkedList();
 		DLinkedList M3 = new DLinkedList();
 		DLinkedList M4 = new DLinkedList();
@@ -14,38 +13,29 @@ public class Main {
 		DLinkedList M7 = new DLinkedList();
 	
 		
-		M1B.append("Ataturk Havalimani");
-		M1B.push("Istanbul Fuar Merkezi");
-		M1B.push("Yenibosna");
-		M1B.push("Atakoy-Sirinevler");
-		M1B.push("Bahcelievler");
-		M1B.push("Bakirkoy-Incirli");
-		M1B.push("Zeytinburnu");
-		M1B.push("Merter");
-		M1B.push("Davutpaşa-YTÜ");
-		M1B.push("Terazidere");
-		M1B.push("Otogar");
-		M1B.push("Kocatepe");
-		M1B.push("Sağmalcılar");
-		M1B.push("Bayrampaşa-Maltepe");
-		M1B.push("Topkapı-Ulubatlı");
-		M1B.push("Emniyet-Fatih");
-		M1B.push("Aksaray");
-		M1B.push("Yenikapı");
-
-		M1B.push("Kirazlı-Bağcılar M1/M3");
-		M1B.push("Bağcılar Meydan");
-		M1B.push("Üçyüzlü");
-		M1B.push("Menderes");
-		M1B.push("Esenler");
-		M1B.push("Otogar");
-		M1B.push("Kocatepe");
-		M1B.push("Sağmalcılar");
-		M1B.push("Bayrampaşa-Maltepe");
-		M1B.push("Topkapı-Ulubatlı");
-		M1B.push("Emniyet-Fatih");
-		M1B.push("Aksaray");
-		M1B.push("Yenikapi M1/M2");
+		M1.append("Ataturk Havalimani");
+		M1.push("Istanbul Fuar Merkezi");
+		M1.push("Yenibosna");
+		M1.push("Atakoy-Sirinevler");
+		M1.push("Bahcelievler");
+		M1.push("Bakirkoy-Incirli");
+		M1.push("Zeytinburnu");
+		M1.push("Merter");
+		M1.push("Davutpaşa-YTÜ");
+		M1.push("Terazidere");
+		M1.push("Kirazlı-Bağcılar M1/M3");
+		M1.push("Bağcılar Meydan");
+		M1.push("Üçyüzlü");
+		M1.push("Menderes");
+		M1.push("Esenler");
+		M1.push("Otogar");
+		M1.push("Kocatepe");
+		M1.push("Sağmalcılar");
+		M1.push("Bayrampaşa-Maltepe");
+		M1.push("Topkapı-Ulubatlı");
+		M1.push("Emniyet-Fatih");
+		M1.push("Aksaray");
+		M1.push("Yenikapi M1/M2");
 
 		M2.append("Yenikapi M1/M2");
 		M2.push("Sehzadebası");
@@ -66,8 +56,8 @@ public class Main {
 		M3.push("Başak Konutları");
 		M3.push("Siteler");
 		M3.push("Turgut Özal");
-		M3.push("İkitelli Sanayi");
-		M3.push("İSTOÇ");
+		M3.push("Ikitelli Sanayi");
+		M3.push("ISTOÇ");
 		M3.push("Mahmutbey M3/M7");
 		M3.push("Yenimahalle");
 		M3.push("Kirazlı-Bağcılar M1/M3");
@@ -144,13 +134,13 @@ public class Main {
 	         adj.add(new ArrayList<Integer>());
 	
 	     // Adding edges one by one
-	     Graph.addEdge(adj, 0, 1);
-	     Graph.addEdge(adj, 0, 4);
 	     Graph.addEdge(adj, 1, 2);
 	     Graph.addEdge(adj, 1, 3);
-	     Graph.addEdge(adj, 1, 4);
-	     Graph.addEdge(adj, 2, 3);
-	     Graph.addEdge(adj, 3, 4);
+	     Graph.addEdge(adj, 2, 7);
+	     Graph.addEdge(adj, 2, 6);
+	     Graph.addEdge(adj, 2, 7);
+	     Graph.addEdge(adj, 3, 7);
+	
 	      
 	     Graph.printGraph(adj);
 		
