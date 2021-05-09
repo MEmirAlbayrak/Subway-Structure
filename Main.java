@@ -14,26 +14,26 @@ public class Main {
 		DLinkedList M7 = new DLinkedList();
 	
 		
-		M1A.append("Atatürk Havalimanı");
-		M1A.push("DTM-İstanbul Fuar Merkezi");
-		M1A.push("Yenibosna");
-		M1A.push("Ataköy-Şirinevler");
-		M1A.push("Bahçelievler");
-		M1A.push("Bakırköy-İncirli");
-		M1A.push("Zeytinburnu");
-		M1A.push("Merter");
-		M1A.push("Davutpaşa-YTÜ");
-		M1A.push("Terazidere");
-		M1A.push("Otogar");
-		M1A.push("Kocatepe");
-		M1A.push("Sağmalcılar");
-		M1A.push("Bayrampaşa-Maltepe");
-		M1A.push("Topkapı-Ulubatlı");
-		M1A.push("Emniyet-Fatih");
-		M1A.push("Aksaray");
-		M1A.push("Yenikapı");
+		M1B.append("Ataturk Havalimani");
+		M1B.push("Istanbul Fuar Merkezi");
+		M1B.push("Yenibosna");
+		M1B.push("Atakoy-Sirinevler");
+		M1B.push("Bahcelievler");
+		M1B.push("Bakirkoy-Incirli");
+		M1B.push("Zeytinburnu");
+		M1B.push("Merter");
+		M1B.push("Davutpaşa-YTÜ");
+		M1B.push("Terazidere");
+		M1B.push("Otogar");
+		M1B.push("Kocatepe");
+		M1B.push("Sağmalcılar");
+		M1B.push("Bayrampaşa-Maltepe");
+		M1B.push("Topkapı-Ulubatlı");
+		M1B.push("Emniyet-Fatih");
+		M1B.push("Aksaray");
+		M1B.push("Yenikapı");
 
-		M1B.append("Kirazlı-Bağcılar");
+		M1B.push("Kirazlı-Bağcılar M1/M3");
 		M1B.push("Bağcılar Meydan");
 		M1B.push("Üçyüzlü");
 		M1B.push("Menderes");
@@ -45,17 +45,17 @@ public class Main {
 		M1B.push("Topkapı-Ulubatlı");
 		M1B.push("Emniyet-Fatih");
 		M1B.push("Aksaray");
-		M1B.push("Yenikapı");
+		M1B.push("Yenikapi M1/M2");
 
-		M2.append("Yenikapı");
+		M2.append("Yenikapi M1/M2");
 		M2.push("Sehzadebası");
 		M2.push("Halic");
 		M2.push("Sishane");
 		M2.push("Taksim");
 		M2.push("Osmanbey");
-		M2.push("Sisli-Mecidiyekoy");
+		M2.push("Sisli-Mecidiyekoy M2/M7");
 		M2.push("Gayrettepe");
-		M2.push("4 Levent");
+		M2.push("4 Levent M2/M6");
 		M2.push("Sanayi Mahallesi");
 		M2.push("I.T.U - Ayazaga");
 		M2.push("Ataturk Oto Sanayi");
@@ -68,9 +68,9 @@ public class Main {
 		M3.push("Turgut Özal");
 		M3.push("İkitelli Sanayi");
 		M3.push("İSTOÇ");
-		M3.push("Mahmutbey");
+		M3.push("Mahmutbey M3/M7");
 		M3.push("Yenimahalle");
-		M3.push("Kirazlı-Bağcılar");
+		M3.push("Kirazlı-Bağcılar M1/M3");
 		M3.push("Ziya Gökalp Mahallesi");
 		M3.push("Olimpiyat");
 
@@ -112,12 +112,12 @@ public class Main {
 		M5.push("Çekmeköy");
 		
 
-		M6.append("Levent");
+		M6.append("Levent M2/M6");
 		M6.push("Nispetiye");
 		M6.push("Etiler");
 		M6.push("Boğaziçi Ü.-Hisarüstü");
 		
-		M7.append("Mecidiyeköy");
+		M7.append("Sisli-Mecidiyekoy  M2/M7");
 		M7.push("Çağlayan");
 		M7.push("Kağıthane");
 		M7.push("Nurtepe");
@@ -131,7 +131,7 @@ public class Main {
 		M7.push("Tekstilkent-Giyimkent");
 		M7.push("Oruç Reis");
 		M7.push("Göztepe Mahallesi");
-		M7.push("Mahmutbey");
+		M7.push("Mahmutbey M3/M7");
 
 
 
