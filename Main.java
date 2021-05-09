@@ -4,18 +4,35 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		DLinkedList M1 = new DLinkedList();
+		DLinkedList M1B = new DLinkedList();
 		
-		DLinkedList M2 = new DLinkedList();
+		DLinkedList M1A = new DLinkedList();
 		
 		
 		
-		M1.append("KÝRAZLI");
-		M1.push("BAÐCILAR");
-		M1.push("ATAÞEHÝR");
-		M1.push("BEÞÝKTAÞ ");
-		M1.push("ARNAVUTKÖY");
-		M1.printlist(M1.head);
+		M1B.append("BAGCILAR");
+		M1B.push("BAGCILAR MEYDAN");
+		M1B.push("UCYUZLU");
+		M1B.push("MENDERES ");
+		M1B.push("ESENLER");
+		M1B.push("OTOGAR M1A/M1B");
+		M1B.push("KOCATEPE");
+		M1B.push("SAGMALCILAR");
+		M1B.push("BAYRAMPASA-MALTEPE");
+		M1B.push("TOPKAPI-ULUBATLI");
+		M1B.push("EMNIYET-FATIH");
+		M1B.push("AKSARAY");
+		M1B.push("YENIKAPI");
+		
+		M1A.append("ATATURK HAVALIMANI");
+		M1A.push("ATATURK HAVALIMANI");
+		
+		
+		
+		
+		
+		
+		M1B.printlist(M1B.head);
 		
 	       int V = 5;
 	        ArrayList<ArrayList<Integer> > adj
