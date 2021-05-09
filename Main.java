@@ -1,16 +1,19 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
-
+	public static DLinkedList M1 = new DLinkedList();
+	public static DLinkedList M2 = new DLinkedList();
+	public static DLinkedList M3 = new DLinkedList();
+	public static DLinkedList M4 = new DLinkedList();
+	public static DLinkedList M5 = new DLinkedList();
+	public static DLinkedList M6 = new DLinkedList();
+	public static DLinkedList M7 = new DLinkedList();
+	
 	public static void main(String[] args) {
 		
-		DLinkedList M1 = new DLinkedList();
-		DLinkedList M2 = new DLinkedList();
-		DLinkedList M3 = new DLinkedList();
-		DLinkedList M4 = new DLinkedList();
-		DLinkedList M5 = new DLinkedList();
-		DLinkedList M6 = new DLinkedList();
-		DLinkedList M7 = new DLinkedList();
+		
+		
 	
 		
 		M1.append("Ataturk Havalimani");
@@ -126,27 +129,146 @@ public class Main {
 
 
 
-	    int V = 5;
-	     ArrayList<ArrayList<Integer> > adj
-	                 = new ArrayList<ArrayList<Integer> >(V);
-	      
-	     for (int i = 0; i < V; i++)
-	         adj.add(new ArrayList<Integer>());
-	
-	     // Adding edges one by one
-	     Graph.addEdge(adj, 1, 2);
-	     Graph.addEdge(adj, 1, 3);
-	     Graph.addEdge(adj, 2, 7);
-	     Graph.addEdge(adj, 2, 6);
-	     Graph.addEdge(adj, 2, 7);
-	     Graph.addEdge(adj, 3, 7);
-	
-	      
-	     Graph.printGraph(adj);
-		
-		
-		
+		Graph graph = new Graph(8, false, true);
+           
+		graph.addEdge(1, 2);
+        graph.addEdge(1, 3);
+        graph.addEdge(2, 7);
+        graph.addEdge(2, 6); // The default weight is 0 if weighted == true
+        graph.addEdge(3, 7);
+        
 
+        /*System.out.println();
+        System.out.println();
+
+        graph.printEdges();
+        System.out.println();
+        System.out.println("Does an edge from 1 to 6 exist?");
+        if (graph.hasEdge(1,6)) {
+            System.out.println("Yes");
+        }
+        else System.out.println("No");
+        */
+	    
+	     
+	    Scanner scn = new Scanner(System.in);
+	    while(true) {
+	    	System.out.println(" ");
+	    	Introduction();
+	    	String inputString = scn.nextLine();
+	    	
+	    	switch(inputString.toLowerCase()) {
+	    	
+	    	case "lls":
+	    		ListLineStops();
+	    		break;
+	    	
+	    	case "stops":
+	    		
+	    		Stops();
+	    		break;
+	    	case "lines":
+	    		Lines();
+	    		break;
+	    	case "ss":
+	    		subwayStop();
+	    		
+	    	
+	    	}
+	    }
+		
+	
+	}
+	public static void Lines() {
+		for(int i =0; i< 7;i++) {
+	    	 
+	    	 System.out.println("M"+(i+1) + " ");
+		}
+	}
+	public static void Stops() {
+		
+		DLinkedList[] MLists = {M1,M2,M3,M4,M5,M6,M7};
+     for(int i =0; i< 7;i++) {
+    	 
+    	 System.out.println("M"+(i+1) + " :");
+    	  MLists[i].printlist(MLists[i].head);
+     }
+    
+	}
+	
+	public static void Introduction() {
+		System.out.println("LLS - You can write line name to the console to see the subway line you want.");
+		System.out.println("Stops - You can list all stops.");
+		System.out.println("Lines - You can list lines in operation.");
+		System.out.println("SS - If you write any subway stops,you can see which line they are in.");
+	}
+	public static void printMX(DLinkedList mx) {
+		
+		mx.printlist(mx.head);
+	   
+	}
+	
+	public static void ListLineStops() {
+		
+		Scanner scn = new Scanner(System.in);
+		
+		System.out.println("Enter a line name :  ");
+		String lineName = scn.nextLine();
+		
+	  
+		switch(lineName.toLowerCase()) {
+    	
+		case "e" : 
+			
+			break;
+    	case "m1" : 
+    		printMX(M1);
+    		break;
+    	case "m2":
+    		printMX(M2);
+    		break;
+    	case "m3":
+    		printMX(M3);
+    		break;
+    	case "m4":
+    		printMX(M4);
+    		break;
+    	case "m5":
+    		printMX(M5);
+    		break;
+    	case "m6":
+    		printMX(M6);
+    		break;
+    	case "m7":
+    		printMX(M7);
+    		break;
+    	default :
+    		System.out.println("Invalid input, try again or write 'e' to exit.");
+    		ListLineStops();
+    		break;
+    	}
+	}
+	public static void subwayStop() {
+		
+		System.out.println("Enter a subway stop name : ");
+		DLinkedList[] MLists = {M1,M2,M3,M4,M5,M6,M7};
+		Scanner scner = new Scanner(System.in);
+		
+		
+		String subwayStop = scner.next();
+			
+		
+	     for(int i =0; i< 7;i++) {
+	    	 
+	    	
+	    	if(DLinkedList.search(MLists[i].head, subwayStop)) {
+	    		
+	    		System.out.println(subwayStop + "Found in " + MLists[i].toString());
+	    	}
+	    	
+	     }
+	    
+		
 	}
 
 }
