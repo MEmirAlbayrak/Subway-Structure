@@ -1,2 +1,2 @@
 # Subway-Structure
-Using Data Structure for Subway System
+Using Data Structures for Subway System
