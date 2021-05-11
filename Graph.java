@@ -25,27 +25,27 @@ public class Graph {
 	        isSetMatrix = new boolean[numOfNodes][numOfNodes];
 	    }
 	    
-	    public void addEdge(int source, int destination) {
+	    public void addEdge(int source, int destination, float weight) {
 
-	        int valueToAdd = 1;
-
-	        if (weighted) {
-	            valueToAdd = 0;
-	        }
-
-	        matrix[source][destination] = valueToAdd;
-	        isSetMatrix[source][destination] = true;
-
-	        if (!directed) {
-	            matrix[destination][source] = valueToAdd;
-	            isSetMatrix[destination][source] = true;
-	        }
-	    }
+			float valueToAdd = weight;
+		
+			if (!weighted) {
+				valueToAdd = 1;
+			}
+		
+			matrix[source][destination] = valueToAdd;
+			isSetMatrix[source][destination] = true;
+		
+			if (!directed) {
+				matrix[destination][source] = valueToAdd;
+				isSetMatrix[destination][source] = true;
+			}
+		}
 	   
 	    
 	 
 	    public void printEdges() {
-	        for (int i = 0; i < numOfNodes; i++) {
+	        for (int i = 1; i < numOfNodes; i++) {
 	            System.out.print("Node " + i + " is connected to: ");
 	            for (int j = 0; j < numOfNodes; j++) {
 	                if (isSetMatrix[i][j]) {
@@ -59,11 +59,12 @@ public class Graph {
 	        return isSetMatrix[source][destination];
 	    }
 
+
 	    public Float getEdgeValue(int source, int destination) {
 	        if (!weighted || !isSetMatrix[source][destination])
 	            return null;
 	        return matrix[source][destination];
-	    }// ...
+	    }
 	}
  
 

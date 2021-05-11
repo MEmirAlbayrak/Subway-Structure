@@ -12,4 +12,7 @@ public class Node {
     	  
    data = d;
     	            }
+
+    public void setDistance(int i) {
+    }
 }
