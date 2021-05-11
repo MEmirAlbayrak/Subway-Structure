@@ -32,23 +32,22 @@ public class DLinkedList {
 	       
 	      // Stores position of the integer
 	      // in the doubly linked list
-	      int pos = 0;
+	      //int pos = 0;
 	       
 	      // Traverse the doubly linked list
-	      while (temp.data != x
+	      while (temp.data.toLowerCase() != x.toLowerCase()
 	                 && temp.next != null)
 	      {
 	        // Update pos
-	        pos++;
+	        //pos++;
 	         
 	        // Update temp
 	        temp = temp.next;
 	      }
-	       
+		  
 	      // If the integer not present
 	      // in the doubly linked list
-	      if (temp.data != x) {
-	    	  System.out.println("Found" + x);
+	      if (temp.data.toLowerCase() != x.toLowerCase()) {
 	    	  return false;
 	    	  
 	      }
@@ -98,13 +97,19 @@ public class DLinkedList {
 	    // linked list starting from the given node
 	    public  void printlist(Node node)
 	    {
-	        Node last = null;
+			int properPrint = 1;
 	       // System.out.println("\nTraversal in forward Direction \n");
-      	        while (node != null) {
-	            System.out.print(node.data + " ");
-	            last = node;
-	            node = node.next;
-	            
+      	        while (node != null) {	  
+					if(properPrint%6 != 0 && node.next != null ){
+						System.out.print(node.data + " - ");
+					}
+					else if(properPrint%6 == 0 || node.next ==null ){
+						System.out.print(node.data);
+						System.out.println("");
+					}
+					Node last = node;
+					node = node.next;
+	            	properPrint+=1;
 	        }
 	        System.out.println(" ");
 	        /*

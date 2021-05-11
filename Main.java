@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -149,13 +148,12 @@ public class Main {
         }
         else System.out.println("No");
         */
-	    
+	
 	     
-	    Scanner scn = new Scanner(System.in);
 	    while(true) {
 	    	System.out.println(" ");
 	    	Introduction();
-	    	String inputString = scn.nextLine();
+	    	String inputString = GetInput();
 	    	
 	    	switch(inputString.toLowerCase()) {
 	    	
@@ -195,8 +193,15 @@ public class Main {
      }
     
 	}
-	
 	public static void Introduction() {
+		try
+		{
+		    Thread.sleep(800);
+		}
+		catch(InterruptedException ex)
+		{
+		    Thread.currentThread().interrupt();
+		}
 		System.out.println("LLS - You can write line name to the console to see the subway line you want.");
 		System.out.println("Stops - You can list all stops.");
 		System.out.println("Lines - You can list lines in operation.");
@@ -206,15 +211,12 @@ public class Main {
 		
 		mx.printlist(mx.head);
 	   
-	}
-	
+	}	
 	public static void ListLineStops() {
 		
-		Scanner scn = new Scanner(System.in);
 		
 		System.out.println("Enter a line name :  ");
-		String lineName = scn.nextLine();
-		
+		String lineName = GetInput();	
 	  
 		switch(lineName.toLowerCase()) {
     	
@@ -252,23 +254,24 @@ public class Main {
 		
 		System.out.println("Enter a subway stop name : ");
 		DLinkedList[] MLists = {M1,M2,M3,M4,M5,M6,M7};
-		Scanner scner = new Scanner(System.in);
 		
-		
-		String subwayStop = scner.next();
+		String subwayStop = GetInput();
 			
-		
-	     for(int i =0; i< 7;i++) {
-	    	 
-	    	
-	    	if(DLinkedList.search(MLists[i].head, subwayStop)) {
-	    		
+		//System.out.println(subwayStop);
+	    for(int i =0; i< 7;i++) {	     	
+	    	if(DLinkedList.search(MLists[i].head, subwayStop)) {	
+				//System.out.println(DLinkedList.search(MLists[i].head, subwayStop));
 	    		System.out.println(subwayStop + "Found in " + MLists[i].toString());
 	    	}
-	    	
+			else if(i == 6 && DLinkedList.search(MLists[i].head, subwayStop) == false){
+				System.out.println(subwayStop + " not Found in any lines");
+			}
 	     }
-	    
-		
 	}
 
+	public static String GetInput(){
+		Scanner in = new Scanner(System.in);
+		String inputString = in.nextLine();
+		return inputString;
+	}
 }
