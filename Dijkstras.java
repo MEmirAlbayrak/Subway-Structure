@@ -32,13 +32,14 @@ public class Dijkstras {
 			end = scn.next().charAt(1);
 			correction = true;
 		}
-		for(int i=1; i<5; i++){
-			if(start != lines[i] || end != lines[i]){
-				System.out.println("Please input valid lines.");
-				correction = false;
-				break;
-			}
-		}
+
+		// for(int i=1; i<5; i++){
+		// 	if(start != lines[i] || end != lines[i]){
+		// 		System.out.println("Please input valid lines.");
+		// 		correction = false;
+		// 		break;
+		// 	}
+		// }
 		System.out.println(g.getShortestPath(end, start) + " " + end.toString());
 		
 	}
