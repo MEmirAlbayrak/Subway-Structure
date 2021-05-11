@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -126,15 +125,6 @@ public class Main {
 		M7.push("Göztepe Mahallesi");
 		M7.push("Mahmutbey M3/M7");
 
-		DijkstrasGraph g = new DijkstrasGraph();
-		g.addVertex('1', Arrays.asList(new Vertex('2', 1), new Vertex('3', 1)));
-		g.addVertex('2', Arrays.asList(new Vertex('1', 1), new Vertex('6', 1), new Vertex('7', 1)));
-		g.addVertex('3', Arrays.asList(new Vertex('1', 1), new Vertex('7', 1)));
-		g.addVertex('4', Arrays.asList());
-		g.addVertex('5', Arrays.asList());
-		g.addVertex('6', Arrays.asList(new Vertex('2', 1)));
-		g.addVertex('7', Arrays.asList(new Vertex('2', 1), new Vertex('3', 1)));
-
 
 		Graph graph = new Graph(8, false, true);
            
@@ -169,9 +159,7 @@ public class Main {
 	    	case "lls":
 	    		ListLineStops();
 	    		break;
-	    	
 	    	case "stops":
-	    		
 	    		Stops();
 	    		break;
 	    	case "lines":
@@ -179,10 +167,10 @@ public class Main {
 	    		break;
 	    	case "ss":
 	    		subwayStop();
+				break;
 			case "cr":
 				ClosestRoute();
-	    		
-	    	
+				break;
 	    	}
 	    }
 		
@@ -217,6 +205,7 @@ public class Main {
 		System.out.println("Stops - You can list all stops.");
 		System.out.println("Lines - You can list lines in operation.");
 		System.out.println("SS - If you write any subway stops,you can see which line they are in.");
+		System.out.println("CR - Found.");
 	}
 	public static void printMX(DLinkedList mx) {
 		
@@ -281,28 +270,8 @@ public class Main {
 	}
 
 	public static void ClosestRoute(){
-		Scanner scn = new Scanner(System.in);
-		DijkstrasGraph g = new DijkstrasGraph();
-		Character[] lines = {'1','2','3','6','7'};
-		boolean correction = false;
-		Character start = 'a';
-		Character end = 'b';
-		while(!correction){
-			System.out.println("Enter Start Line:");
-			start = scn.next().charAt(0);
-			System.out.println("Enter Finish Line:");
-			end = scn.next().charAt(0);
-			correction = true;
-		}
-		for(int i=1; i<5; i++){
-			if(start != lines[i] || end != lines[i]){
-				System.out.println("Please input valid lines.");
-				correction = false;
-				break;
-			}
-		}
-		System.out.println(g.getShortestPath(end, start) + " " + end.toString());
-		scn.close();
+		String[] args={};
+        Dijkstras.main(args);
 	}
 
 	public static String GetInput(){

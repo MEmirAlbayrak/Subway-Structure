@@ -4,11 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Scanner;
 
 
 public class Dijkstras {
 
 	public static void main(String[] args) {
+
 		DijkstrasGraph g = new DijkstrasGraph();
 		g.addVertex('1', Arrays.asList(new Vertex('2', 1), new Vertex('3', 1)));
 		g.addVertex('2', Arrays.asList(new Vertex('1', 1), new Vertex('6', 1), new Vertex('7', 1)));
@@ -17,6 +19,27 @@ public class Dijkstras {
 		g.addVertex('5', Arrays.asList());
 		g.addVertex('6', Arrays.asList(new Vertex('2', 1)));
 		g.addVertex('7', Arrays.asList(new Vertex('2', 1), new Vertex('3', 1)));
+		
+		Scanner scn = new Scanner(System.in);
+		Character[] lines = {'1','2','3','6','7'};
+		boolean correction = false;
+		Character start = 'a';
+		Character end = 'b';
+		while(!correction){
+			System.out.println("Enter Start Line:");
+			start = scn.next().charAt(1);
+			System.out.println("Enter Finish Line:");
+			end = scn.next().charAt(1);
+			correction = true;
+		}
+		for(int i=1; i<5; i++){
+			if(start != lines[i] || end != lines[i]){
+				System.out.println("Please input valid lines.");
+				correction = false;
+				break;
+			}
+		}
+		System.out.println(g.getShortestPath(end, start) + " " + end.toString());
 		
 	}
 	
