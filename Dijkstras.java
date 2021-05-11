@@ -22,16 +22,16 @@ public class Dijkstras {
 		
 		Scanner scn = new Scanner(System.in);
 		Character[] lines = {'1','2','3','6','7'};
-		boolean correction = false;
+		//boolean correction = false;
 		Character start = 'a';
 		Character end = 'b';
-		while(!correction){
+		//while(!correction){
 			System.out.println("Enter Start Line:");
 			start = scn.next().charAt(1);
 			System.out.println("Enter Finish Line:");
 			end = scn.next().charAt(1);
-			correction = true;
-		}
+		//	correction = true;
+		//}
 
 		// for(int i=1; i<5; i++){
 		// 	if(start != lines[i] || end != lines[i]){
