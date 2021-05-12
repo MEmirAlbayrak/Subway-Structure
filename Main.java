@@ -261,7 +261,7 @@ public class Main {
 
 		//System.out.println(subwayStop);
 	    for(int i =0; i< 7;i++) {	  
-			System.out.println(i);   	
+			//System.out.println(i);   	
 	    	if(DLinkedList.search(MLists[i].head, subwayStop)) {	
 				//System.out.println(DLinkedList.search(MLists[i].head, subwayStop));
 	    		System.out.println(subwayStop + " Found in M" +(i+1));
