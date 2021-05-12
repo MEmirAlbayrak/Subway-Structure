@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 public class Dijkstras {
 
-	public static void main(String[] args) {
+	public static DijkstrasGraph g = new DijkstrasGraph();
 
-		DijkstrasGraph g = new DijkstrasGraph();
+	public static void addGraph(){
 		g.addVertex('1', Arrays.asList(new Vertex('2', 1), new Vertex('3', 1)));
 		g.addVertex('2', Arrays.asList(new Vertex('1', 1), new Vertex('6', 1), new Vertex('7', 1)));
 		g.addVertex('3', Arrays.asList(new Vertex('1', 1), new Vertex('7', 1)));
@@ -19,7 +19,10 @@ public class Dijkstras {
 		g.addVertex('5', Arrays.asList());
 		g.addVertex('6', Arrays.asList(new Vertex('2', 1)));
 		g.addVertex('7', Arrays.asList(new Vertex('2', 1), new Vertex('3', 1)));
-		
+	}
+	public static void LineCR(){
+
+		addGraph();
 		Scanner scn = new Scanner(System.in);
 		Character[] lines = {'1','2','3','6','7'};
 		//boolean correction = false;
@@ -40,10 +43,110 @@ public class Dijkstras {
 		// 		break;
 		// 	}
 		// }
-		System.out.println(g.getShortestPath(end, start) + " " + end.toString());
+
+		/////////Tekrarlanıcak
+
+		ArrayList<Character> shortestPath = new ArrayList<Character>();
+		for (int i = 0; i < g.getShortestPath(end, start).size(); i++) {
+			shortestPath.add(g.getShortestPath(end, start).get(i));
+		}
+		shortestPath.add(end);
+		//System.out.println("Size of AL: " + shortestPath.size());
+		for (int i = 0; i < shortestPath.size(); i++) {
+			System.out.print("M"+ shortestPath.get(i));
+			if(shortestPath.size() != i+1)
+			System.out.print(" -> ");
+		}
+
+	
+		System.out.println("\n\nChange line in this stations: \n");
+
+
+		for (int i = 0; i < shortestPath.size(); i++) {
+			if(shortestPath.size() != i+1){
+				if(shortestPath.get(i)=='1' && shortestPath.get(i+1) == '2'
+				|| 	shortestPath.get(i)=='2' && shortestPath.get(i+1) == '1'){
+					System.out.println("Yenikapi M1<=>M2");
+				}
+				else if(shortestPath.get(i)=='1' && shortestPath.get(i+1) == '3'
+				|| shortestPath.get(i)=='3' && shortestPath.get(i+1) == '1'){
+					System.out.println("Kirazli-Bagcilar M1<=>M3");
+				}
+				else if(shortestPath.get(i)=='2' && shortestPath.get(i+1) == '6'
+				||	shortestPath.get(i)=='6' && shortestPath.get(i+1) == '2'){
+					System.out.println("4 Levent M2<=>M6");
+
+				}
+				else if(shortestPath.get(i)=='2' && shortestPath.get(i+1) == '7'
+				|| shortestPath.get(i)=='7' && shortestPath.get(i+1) == '2'){
+					System.out.println("Sisli-Mecidiyekoy  M2<=>M7");	
+				}
+				else if(shortestPath.get(i)=='3' && shortestPath.get(i+1) == '7'
+				|| shortestPath.get(i)=='7' && shortestPath.get(i+1) == '3'){
+					System.out.println("Mahmutbey M3<=>M7");
+				}
+				if(shortestPath.size() != i+2){
+					System.out.println("    |\n    v");
+				}
+			}
+		}
 		
 	}
 	
+	public static void StopCR(String startingStation , String finalStation , Character start, Character end){
+		
+		addGraph();
+
+		ArrayList<Character> shortestPath = new ArrayList<Character>();
+		for (int i = 0; i < g.getShortestPath(end, start).size(); i++) {
+			shortestPath.add(g.getShortestPath(end, start).get(i));
+		}
+		shortestPath.add(end);
+		//System.out.println("Size of AL: " + shortestPath.size());
+		for (int i = 0; i < shortestPath.size(); i++) {
+			System.out.print("M"+ shortestPath.get(i));
+			if(shortestPath.size() != i+1)
+			System.out.print(" -> ");
+		}
+
+		System.out.println("\n" + startingStation );
+		System.out.println("    |\n    v");
+		for (int i = 0; i < shortestPath.size(); i++) {
+			if(shortestPath.size() != i+1){
+				if(shortestPath.get(i)=='1' && shortestPath.get(i+1) == '2'
+				|| 	shortestPath.get(i)=='2' && shortestPath.get(i+1) == '1'){
+					System.out.println("Line change station go to Yenikapi " + shortestPath.get(i) + "=>"+ shortestPath.get(i+1));
+				}
+				else if(shortestPath.get(i)=='1' && shortestPath.get(i+1) == '3'
+				|| shortestPath.get(i)=='3' && shortestPath.get(i+1) == '1'){
+					System.out.println("Line change station go to Kirazli-Bagcilar " + shortestPath.get(i) + "=>"+ shortestPath.get(i+1));
+				}
+				else if(shortestPath.get(i)=='2' && shortestPath.get(i+1) == '6'
+				||	shortestPath.get(i)=='6' && shortestPath.get(i+1) == '2'){
+					System.out.println("Line change station go to 4 Levent " + shortestPath.get(i) + "=>"+ shortestPath.get(i+1));
+
+				}
+				else if(shortestPath.get(i)=='2' && shortestPath.get(i+1) == '7'
+				|| shortestPath.get(i)=='7' && shortestPath.get(i+1) == '2'){
+					System.out.println("Line change station go to Sisli-Mecidiyekoy " + shortestPath.get(i) + "=>"+ shortestPath.get(i+1));	
+				}
+				else if(shortestPath.get(i)=='3' && shortestPath.get(i+1) == '7'
+				|| shortestPath.get(i)=='7' && shortestPath.get(i+1) == '3'){
+					System.out.println("Line change station go to Mahmutbey " + shortestPath.get(i) + "=>"+ shortestPath.get(i+1));
+				}
+				
+				System.out.println("    |\n    v");
+				
+			}
+		}
+		System.out.println("Your final station is " + finalStation); 
+		//printCR(start, end);
+	}
+
+	//Not sure if i use
+	// public static void printCR(Character start, Character end){
+	// 
+	// }
 }
 
 class Vertex implements Comparable<Vertex> {

@@ -25,16 +25,19 @@ public class DLinkedList {
 
 	      //int pos = 0;
 	       
-		  System.out.println(temp.data + "  "  + x);
-	      while (temp.data != x && temp.next != null)
+	      while (!x.toString().equals(temp.data.toString()) && temp.next != null)
 	      {
-	        //pos++;
-	         
+			//pos++;
+			//System.out.print("Temp Data: "+ temp.data + " x= "+ x + " isTrue: ");
+			//System.out.println(x.toString().equals(temp.data.toString()));
 	        temp = temp.next;
 	      }
 		  
-	      if (temp.data.toLowerCase() != x.toLowerCase()) {
-	    	  return false;
+		  //System.out.print("Temp Data: "+ temp.data + " x= "+ x + " isTrue: ");
+		  //System.out.println(x.toString().equals(temp.data.toString()));
+
+	      if (!x.toString().equals(temp.data.toString())) {
+	    	return false;
 	      }
 
 	      

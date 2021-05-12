@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -11,9 +13,6 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		
-		
-	
 		
 		M1.append("Ataturk Havalimani");
 		M1.push("Istanbul Fuar Merkezi");
@@ -107,7 +106,7 @@ public class Main {
 		M6.append("Levent M2/M6");
 		M6.push("Nispetiye");
 		M6.push("Etiler");
-		M6.push("Bogazici u.-Hisarustu");
+		M6.push("Bogazici U.- Hisarustu");
 		
 		M7.append("Sisli-Mecidiyekoy  M2/M7");
 		M7.push("Caglayan");
@@ -136,7 +135,7 @@ public class Main {
         
  		
         
-        graph.printEdges();
+        //graph.printEdges();
         /*
         System.out.println();
 
@@ -147,15 +146,22 @@ public class Main {
         }
         else System.out.println("No");
         */
-	
-	     
+		
+		
+		long start = System.currentTimeMillis();
 	    while(true) {
 	    	System.out.println(" ");
 	    	Introduction();
 	    	String inputString = GetInput();
 	    	
 	    	switch(inputString.toLowerCase()) {
-	    	
+	    	case "e":
+			case "exit":
+				long end = System.currentTimeMillis();
+				NumberFormat formatter = new DecimalFormat("#0.00000");
+				System.out.print("Execution time is " + formatter.format((end - start) / 1000d) + " seconds");
+				System.exit(0);
+				break;
 	    	case "lls":
 	    		ListLineStops();
 	    		break;
@@ -173,8 +179,6 @@ public class Main {
 				break;
 	    	}
 	    }
-		
-	
 	}
 	public static void Lines() {
 		for(int i =0; i< 7;i++) {
@@ -205,7 +209,7 @@ public class Main {
 		System.out.println("Stops - You can list all stops.");
 		System.out.println("Lines - You can list lines in operation.");
 		System.out.println("SS - If you write any subway stops,you can see which line they are in.");
-		System.out.println("CR - Found.");
+		System.out.println("CR - Found closest route. Have 2 mods lines and stops");
 	}
 	public static void printMX(DLinkedList mx) {
 		
@@ -219,9 +223,7 @@ public class Main {
 		String lineName = GetInput();	
 	  
 		switch(lineName.toLowerCase()) {
-    	
 		case "e" : 
-			
 			break;
     	case "m1" : 
     		printMX(M1);
@@ -258,20 +260,67 @@ public class Main {
 		
 
 		//System.out.println(subwayStop);
-	    for(int i =0; i< 7;i++) {	     	
+	    for(int i =0; i< 7;i++) {	  
+			System.out.println(i);   	
 	    	if(DLinkedList.search(MLists[i].head, subwayStop)) {	
 				//System.out.println(DLinkedList.search(MLists[i].head, subwayStop));
-	    		System.out.println(subwayStop + "Found in " + MLists[i].toString());
+	    		System.out.println(subwayStop + " Found in M" +(i+1));
+				break;
 	    	}
 			else if(i == 6 && DLinkedList.search(MLists[i].head, subwayStop) == false){
 				System.out.println(subwayStop + " not found in any lines");
+				break;
+
 			}
 	     }
 	}
-
 	public static void ClosestRoute(){
-		String[] args={};
-        Dijkstras.main(args);
+		
+		System.out.println("Chose Mode stops or lines: ");
+		String whichTypeSearch = GetInput();
+		//System.out.println(whichTypeSearch + "ifin içi: " + whichTypeSearch.equals("stops"));
+		if(whichTypeSearch.equals("stops")){
+			System.out.println("Enter a starting subway stop name : ");
+			DLinkedList[] MLists = {M1,M2,M3,M4,M5,M6,M7};
+			String startSubwayStop = GetInput();
+			System.out.println("Enter a starting subway stop name : ");
+			String stopSubwayStop = GetInput();
+			
+			String start = " ", end = " ";
+
+			//System.out.println(subwayStop);
+	    	for(int i =0; i< 7;i++) {	  
+				System.out.println(i);   	
+	    		if(DLinkedList.search(MLists[i].head, startSubwayStop)) {	
+					//System.out.println(DLinkedList.search(MLists[i].head, subwayStop));
+	    			System.out.println(startSubwayStop + " Found in M" +(i+1));
+					start = Integer.toString(i+1);
+					break;
+	    		}
+				else if(i == 6 && DLinkedList.search(MLists[i].head, startSubwayStop) == false){
+					System.out.println(startSubwayStop + " not found in any lines");
+					break;
+				}
+	    	}
+			for(int i =0; i< 7;i++) {	
+			 	if(DLinkedList.search(MLists[i].head, stopSubwayStop)) {	
+					//System.out.println(DLinkedList.search(MLists[i].head, subwayStop));
+					System.out.println(stopSubwayStop + " Found in M" +(i+1));
+					end = Integer.toString(i+1);
+					break;
+				}
+				else if(i == 6 && DLinkedList.search(MLists[i].head, stopSubwayStop) == false){
+					System.out.println(stopSubwayStop + " not found in any lines");
+					break;
+				}
+			}
+			//System.out.println("Start char: " + start.charAt(0) + " End char: " + end.charAt(0)); //Dijkstrasa gönderilern değerler
+			Dijkstras.StopCR(startSubwayStop, stopSubwayStop, start.charAt(0) , end.charAt(0));
+			//Dijkstras.printCR(start.charAt(0) , end.charAt(0));
+		}
+		else if(whichTypeSearch.equals("line")){
+			Dijkstras.LineCR();
+		}
 	}
 
 	public static String GetInput(){
@@ -279,4 +328,6 @@ public class Main {
 		String inputString = in.nextLine();
 		return inputString;
 	}
+
+	
 }

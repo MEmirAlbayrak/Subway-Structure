@@ -1,17 +1,12 @@
 public class Graph {
 
-	  // A utility function to add an edge in an
-    // undirected graph
-	 private int numOfNodes;
+
+		private int numOfNodes;
 	    private boolean directed;
 	    private boolean weighted;
 	    private float[][] matrix;
 
-	    /*
-	     This will allow us to safely add weighted graphs in our class since
-	     we will be able to check whether an edge exists without relying
-	     on specific special values (like 0)
-	    */
+
 	    private boolean[][] isSetMatrix;
 
 	    public Graph(int numOfNodes, boolean directed, boolean weighted) {
