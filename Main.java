@@ -183,7 +183,7 @@ public class Main {
 	public static void Lines() {
 		for(int i =0; i< 7;i++) {
 	    	 
-	    	 System.out.println("M"+(i+1) + " ");
+	    	 System.out.println("M"+(i+1) + " - Active");
 		}
 	}
 	public static void Stops() {
