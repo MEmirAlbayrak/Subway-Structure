@@ -20,29 +20,20 @@ public class Dijkstras {
 		g.addVertex('6', Arrays.asList(new Vertex('2', 1)));
 		g.addVertex('7', Arrays.asList(new Vertex('2', 1), new Vertex('3', 1)));
 	}
+
+	
 	public static void LineCR(){
 
 		addGraph();
 		Scanner scn = new Scanner(System.in);
-		Character[] lines = {'1','2','3','6','7'};
 		//boolean correction = false;
 		Character start = 'a';
 		Character end = 'b';
-		//while(!correction){
-			System.out.println("Enter Start Line:");
-			start = scn.next().charAt(1);
-			System.out.println("Enter Finish Line:");
-			end = scn.next().charAt(1);
-		//	correction = true;
-		//}
+		System.out.println("Enter Start Line:");
+		start = scn.next().charAt(1);
+		System.out.println("Enter Finish Line:");
+		end = scn.next().charAt(1);
 
-		// for(int i=1; i<5; i++){
-		// 	if(start != lines[i] || end != lines[i]){
-		// 		System.out.println("Please input valid lines.");
-		// 		correction = false;
-		// 		break;
-		// 	}
-		// }
 
 		/////////Tekrarlanıcak
 

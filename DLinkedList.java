@@ -27,14 +27,8 @@ public class DLinkedList {
 	       
 	      while (!x.toString().equals(temp.data.toString()) && temp.next != null)
 	      {
-			//pos++;
-			//System.out.print("Temp Data: "+ temp.data + " x= "+ x + " isTrue: ");
-			//System.out.println(x.toString().equals(temp.data.toString()));
 	        temp = temp.next;
 	      }
-		  
-		  //System.out.print("Temp Data: "+ temp.data + " x= "+ x + " isTrue: ");
-		  //System.out.println(x.toString().equals(temp.data.toString()));
 
 	      if (!x.toString().equals(temp.data.toString())) {
 	    	return false;
@@ -43,13 +37,7 @@ public class DLinkedList {
 	      
 	      return true;
 	      
-	    }
-	     
-	 
-	   
-	   
-	 
-	    
+	    } 
 	    void append(String new_data)
 	    {
 	        
@@ -72,33 +60,21 @@ public class DLinkedList {
 	 
 	        new_node.prev = last;
 	    }
-	 
-
 	    public  void printlist(Node node)
 	    {
 			int properPrint = 1;
-	       // System.out.println("\nTraversal in forward Direction \n");
-      	        while (node != null) {	  
-					if(properPrint%6 != 0 && node.next != null ){
-						System.out.print(node.data + " - ");
-					}
-					else if(properPrint%6 == 0 || node.next ==null ){
-						System.out.print(node.data);
-						System.out.println("");
-					}
-					Node last = node;
-					node = node.next;
-	            	properPrint+=1;
+      	    while (node != null) {	  
+				if(properPrint%6 != 0 && node.next != null ){
+					System.out.print(node.data + " - ");
+				}
+				else if(properPrint%6 == 0 || node.next ==null ){
+					System.out.print(node.data);
+					System.out.println("");
+				}
+				node = node.next;
+            	properPrint+=1;
 	        }
 	        System.out.println(" ");
-	        /*
-	        System.out.println();
-	        System.out.println("\nTraversal in reverse direction \n");
-	        while (last != null) {
-	            System.out.print(last.data);
-	            last = last.prev;
-	            
-	        }
-	        */
+
 }
 }
