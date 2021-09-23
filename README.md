@@ -3,7 +3,7 @@ BAHCESEHIR UNIVERSITY 2.Year SEN2212  Data Structor and Algorithm Final Project.
 
 About This Project
 
-This project made by * *Mustafa Emir Albayrak* * and * *Bora Tunç Kaya* *. Main perpuse is 
+This project made by *Mustafa Emir Albayrak* and *Bora Tunç Kaya* . Main perpuse is 
 how we can use data structors in one of our project.
 Data Structors we used in this project are **Double Linked List** & **Graph**.  
 With help of this structures we made a Istanbul's metro app (Without GUI).
