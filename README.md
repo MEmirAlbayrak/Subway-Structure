@@ -21,7 +21,8 @@ With help of this structures we made a Istanbul's metro app (Without GUI).
 - Print Edges
 - Chech edges connection
 - Get Edge Value
-- Dijkstras Algorithm \> For found the fastest way to travel the destination
+- Dijkstras Algorithm 
+  > For found the fastest way to travel the destination
 
 ## Commands
 
@@ -30,7 +31,7 @@ With help of this structures we made a Istanbul's metro app (Without GUI).
 - **Lines** - You can list lines in operation.
 - **SS** - If you write any subway stops,you can see which line they are in.
 - **CR** - Found closest route. Have 2 mods lines and stops 
-> CR function currntly not ready for real life usage
+  > CR function currntly not ready for real life usage
 
 
 ## Lines & Stations
