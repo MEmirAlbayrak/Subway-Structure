@@ -29,7 +29,8 @@ With help of this structures we made a Istanbul's metro app (Without GUI).
 - **Stops** - You can list all stops.
 - **Lines** - You can list lines in operation.
 - **SS** - If you write any subway stops,you can see which line they are in.
-- **CR** - Found closest route. Have 2 mods lines and stops \> (Currntly not ready for real life usage)
+- **CR** - Found closest route. Have 2 mods lines and stops 
+> CR function currntly not ready for real life usage
 
 
 ## Lines & Stations
