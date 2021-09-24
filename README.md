@@ -1,7 +1,7 @@
-# Subway-Structure
-BAHCESEHIR UNIVERSITY 2.Year SEN2212  Data Structor and Algorithm Final Project.
+# Subway Structure
+Bahcesehir University 2nd Year SEN2212 Data Structor and Algorithm Final Project.
 
-About This Project
+## About This Project
 
 This project made by *Mustafa Emir Albayrak* and *Bora Tunç Kaya* . Main perpuse is 
 how we can use data structors in one of our project.
