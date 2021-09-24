@@ -1,20 +1,20 @@
-# Subway-Structure
-BAHCESEHIR UNIVERSITY 2.Year SEN2212  Data Structor and Algorithm Final Project.
+# Subway Structure
+Bahcesehir University 2nd Year SEN2212 Data Structures and Algorithms Final Project.
 
-About This Project
+## About This Project
 
-This project made by *Mustafa Emir Albayrak* and *Bora Tunç Kaya* . Main perpuse is 
-how we can use data structors in one of our project.
-Data Structors we used in this project are **Double Linked List** & **Graph**.  
-With help of this structures we made a Istanbul's metro app (Without GUI).
+This project made by *Mustafa Emir Albayrak* and *Bora Tunç Kaya* . Our main purpose is 
+to use data structures and algorithms in our project.
+Data structures used in this project are **Doubly Linked List** & **Graph**.  
+With the help of these structures' we made Istanbul's metro app ( without GUI ).
 
-## Data Structor Methodes
+## Data Structures Methodes
 
-### Double Link List
+### Doubly Link List
 - Push 
 - Search
 - Append
-- Printing DLList
+- Printing Doubly Linked List
 
 ### Graph
 - Add Edges
